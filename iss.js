@@ -1,6 +1,6 @@
 const request = require("request");
 
-const fetchMyIP = function (callback) {
+const fetchMyIP = function(callback) {
   request("https://api.ipify.org?format=json", (error, response, body) => {
     if (error) return callback(error, null);
 
@@ -20,7 +20,7 @@ const fetchMyIP = function (callback) {
   });
 };
 
-const fetchCoordsByIP = function (ip, callback) {
+const fetchCoordsByIP = function(ip, callback) {
   request(
     `https://api.freegeoip.app/json/${ip}?apikey=9f0c3640-3db4-11ec-b805-9f2657a24654`,
     (error, response, body) => {
@@ -53,7 +53,7 @@ const fetchCoordsByIP = function (ip, callback) {
   );
 };
 
-const fetchISSFlyOverTimes = function (obj, callback) {
+const fetchISSFlyOverTimes = function(obj, callback) {
   request(
     `https://iss-pass.herokuapp.com/json/?lat=${String(
       obj.latitude,
